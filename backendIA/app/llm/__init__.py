@@ -9,6 +9,10 @@ def get_llm_provider(settings: Settings) -> LLMProvider:
         from .oci_genai import OCIGenAIChat
 
         return OCIGenAIChat(settings)
+    if settings.llm_provider == "groq":
+        from .groq_chat import GroqChat
+
+        return GroqChat(settings)
     return ExtractiveFallbackLLM()
 
 

@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     top_k: int = 5
 
     embeddings_provider: str = "local"  # local | oci
-    llm_provider: str = "local"  # local | oci
+    llm_provider: str = "local"  # local | oci | groq
     vectorstore_provider: str = "local"  # local | oracle23ai
 
     # OCI Generative AI
@@ -31,6 +31,10 @@ class Settings(BaseSettings):
     oci_compartment_id: str = ""
     oci_embed_model_id: str = "cohere.embed-multilingual-v3.0"
     oci_chat_model_id: str = "cohere.command-r-plus"
+
+    # Groq (alternativa gratuita de LLM_PROVIDER mientras no se tenga OCI Generative AI)
+    groq_api_key: str = ""
+    groq_model: str = "llama-3.3-70b-versatile"
 
     # Oracle Autonomous Database 23ai
     oracle_db_user: str = ""
