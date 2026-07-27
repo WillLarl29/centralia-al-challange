@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./backendIA
+    env_file:
+      - ./backendIA/.env
+    environment:
+      - DOCUMENTS_DIR=/documents
+      - DATA_DIR=/app/data
+    volumes:
+      - ./documents:/documents:ro
+      - backend_data:/app/data
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontendIA
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8000}
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  backend_data:

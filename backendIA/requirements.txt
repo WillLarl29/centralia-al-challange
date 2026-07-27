@@ -1,0 +1,25 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+pydantic-settings==2.5.2
+python-dotenv==1.0.1
+
+# Loaders multi-formato
+pypdf==4.3.1
+python-docx==1.1.2
+python-pptx==0.6.23
+openpyxl==3.1.5
+pandas==2.2.2
+beautifulsoup4==4.12.3
+lxml==5.3.0
+
+# Embeddings locales (fallback sin dependencias externas de red)
+scikit-learn==1.5.2
+numpy==2.1.1
+
+# Integración OCI (Generative AI + Autonomous DB 23ai)
+oci==2.135.1
+oracledb==3.4.2
+
+# Utilidades
+httpx==0.27.2

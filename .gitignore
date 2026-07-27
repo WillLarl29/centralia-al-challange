@@ -23,8 +23,7 @@ dist/
 frontendIA/.vite/
 
 # --- Datos generados / índices vectoriales locales ---
-backendIA/data/vector_store/
-backendIA/data/.cache/
+backendIA/data/
 *.faiss
 *.index
 
