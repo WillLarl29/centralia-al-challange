@@ -60,6 +60,13 @@ uvicorn app.main:app --reload --port 8000
 
 Por defecto corre en **modo local** (`EMBEDDINGS_PROVIDER=local`, `LLM_PROVIDER=local`, `VECTORSTORE_PROVIDER=local`): usa embeddings por hashing y un fallback extractivo (sin LLM real) para que todo el pipeline sea probable sin ninguna credencial de nube. Para respuestas conversacionales completas y con mejor calidad semántica, configura las variables `OCI_*` en `.env` y cambia los tres providers a `oci` / `oracle23ai` (ver `.env.example`).
 
+**Alternativa gratuita mientras no tengas OCI Generative AI habilitado**: se puede usar [Groq](https://console.groq.com) (API gratuita, compatible con OpenAI) para respuestas generativas reales. Configura en `.env`:
+```
+LLM_PROVIDER=groq
+GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxx   # console.groq.com -> API Keys
+GROQ_MODEL=llama-3.3-70b-versatile
+```
+
 Probar:
 
 ```bash
