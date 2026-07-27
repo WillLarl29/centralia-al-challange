@@ -1,0 +1,38 @@
+# --- Entornos y secretos ---
+.env
+.env.*
+!.env.example
+*.pem
+*wallet*
+Wallet_*/
+
+# --- Python (backendIA) ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Node (frontendIA) ---
+node_modules/
+dist/
+.pnpm-store/
+frontendIA/.vite/
+
+# --- Datos generados / índices vectoriales locales ---
+backendIA/data/vector_store/
+backendIA/data/.cache/
+*.faiss
+*.index
+
+# --- Sistema operativo / editores ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Logs ---
+*.log
